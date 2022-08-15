@@ -325,17 +325,22 @@ $mysqli->close();
 
 </html>
 ```
-*This code is responsible for display database data in table this is done by make a connection with database then use the select query to fetch data and the html is to make a table .
+* This code is responsible for display database data in table this is done by make a connection with database then use the select query to fetch data and the html is to make a table .
 
 ### Result
 1. HTML page
+
 ![Screenshot (1101)](https://user-images.githubusercontent.com/108452991/184704751-9fe2ab58-a166-4867-8b3c-bf15813e205e.png)
+
 
 2. PHP page
  ![Screenshot (1102)](https://user-images.githubusercontent.com/108452991/184704928-b6a4f393-a847-4091-94c6-a673363d69ce.png)
 
+
+
 3. Database
 ![Screenshot (1103)](https://user-images.githubusercontent.com/108452991/184705080-d189d16c-463e-4304-a2a5-b904c4e393f6.png)
+
 
 4. Database table page 
 ![Screenshot (1104)](https://user-images.githubusercontent.com/108452991/184705246-8cd3dcdb-61de-4ec2-bfb7-5102bc1c21e3.png)
