@@ -163,3 +163,66 @@ form.form-left input:hover{
 * This code is responsible for make the five buttons and design them to appear  as a circle  by css.
 * each button is represented as input of submit type in a form with get method and action to move to php page.
 
+### PHP code to insert to database:
+```
+<?php
+$host = "localhost";
+$username = "root";
+$password = "";
+
+try 
+{
+    $conn = new PDO("mysql:host=$host;dbname=cp_db", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	 //echo "Connection successful ";
+}
+catch(PDOException $e)
+{
+    echo "Connection failed: " . $e->getMessage();
+}
+
+if(isset($_GET['Forward']))
+{
+	echo "F";
+	$sql = "INSERT INTO cp(value) VALUES('F')";
+	$conn->query($sql);
+}
+
+
+else if(isset($_GET['Stop']))
+{
+	echo "S";
+	$sql = "INSERT INTO cp(value) VALUES('S')";
+	$conn->query($sql);
+}
+
+else if(isset($_GET['Backward']))
+{
+	echo "B";
+	$sql = "INSERT INTO cp(value) VALUES('B')";
+	$conn->query($sql);
+}
+
+else if(isset($_GET['Right']))
+{
+	echo "R";
+	$sql = "INSERT INTO cp(value) VALUES('R')";
+	$conn->query($sql);
+}
+
+else if(isset($_GET['Left']))
+{
+	echo "L";
+	$sql = "INSERT INTO cp(value) VALUES('L')";
+	$conn->query($sql);
+}
+
+?>
+```
+*This code is responsible for displaying the desired character when button pressed. 
+*Then it's insert that character to database table
+# To insert data to database table you need to :
+*create database and table in database 
+*make a connection to database before inserting data 
+*sql query to insert data 
+
