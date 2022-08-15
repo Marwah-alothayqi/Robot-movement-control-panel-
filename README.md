@@ -160,6 +160,8 @@ form.form-left input:hover{
 <body>
 <html>
 ```
+*  - This code is responsible for make the five buttons and design them to appear  as a circle  by css.
+*  -  each button is represented as input of submit type in a form with get method and action to move to php page.
 1.This code is responsible for make the five buttons and design them to appear  as a circle  by css.
 2.each button is represented as input of submit type in a form with get method and action to move to php page.
 
