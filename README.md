@@ -219,10 +219,10 @@ else if(isset($_GET['Left']))
 
 ?>
 ```
-*This code is responsible for displaying the desired character when button pressed. 
-*Then it's insert that character to database table
+* This code is responsible for displaying the desired character when button pressed. 
+* Then it's insert that character to database table
 # To insert data to database table you need to :
-*create database and table in database 
-*make a connection to database before inserting data 
-*sql query to insert data 
+* create database and table in database 
+* make a connection to database before inserting data 
+* sql query to insert data 
 
