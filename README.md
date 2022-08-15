@@ -157,10 +157,9 @@ form.form-left input:hover{
 <form class="form-left" action="cp1.php" method="GET">
   <input type="submit" name="Left" value="Left"/> 
 </form>
-
-	
-
-
 <body>
 <html>
 ```
+1.This code is responsible for make the five buttons and design them to appear  as a circle  by css.
+2.each button is represented as input of submit type in a form with get method and action to move to php page.
+
