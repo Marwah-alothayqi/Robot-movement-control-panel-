@@ -226,3 +226,119 @@ else if(isset($_GET['Left']))
 * make a connection to database before inserting data 
 * sql query to insert data 
 
+### PHP code to display data from database in table:
+```
+<?php
+$user = 'root';
+$password = '';
+// Database name 
+$database = 'cp_db';
+// Server is localhost with
+// port number 3306
+$servername='localhost:3306';
+$mysqli = new mysqli($servername, $user,
+                $password, $database);
+
+// Checking for connections
+if ($mysqli->connect_error) {
+    die('Connect Error (' .
+    $mysqli->connect_errno . ') '.
+    $mysqli->connect_error);
+}
+ 
+
+// SQL query to select data from database and ordered by id DESC
+$sql = " SELECT * FROM cp ORDER BY ID DESC ";
+$result = $mysqli->query($sql);
+$mysqli->close();
+?>
+<!-- HTML & css code to display data in table and design it -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Control panel values</title>
+	<!-- CSS start here -->
+	<style>
+		table {
+			margin:auto;
+			font-size: large;
+			border: 1px solid black;
+		}
+
+		h1 {
+			text-align: center;
+			color: black;
+			font-size: xx-large;
+			font-family: 'Gill Sans', 'Gill Sans MT',
+			' Calibri', 'Trebuchet MS', 'sans-serif';
+		}
+
+		td {
+			background-color: #e7e7e7;
+			border: 1px solid black;
+		}
+
+		th,
+		td {
+			font-weight: bold;
+			border: 1px solid black;
+			padding: 10px;
+			text-align: center;
+		}
+
+		td {
+			font-weight: lighter;
+		}
+	</style>
+</head>
+
+<body>
+	<section>
+		<h1>Control panel values</h1>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Value</th>
+				
+			</tr>
+			<!-- PHP CODE TO FETCH DATA FROM ROWS -->
+			<?php
+				// LOOP TILL END OF DATA
+				while($rows=$result->fetch_assoc())
+				{
+			?>
+			<tr>
+				<!-- FETCHING DATA FROM EACH
+					ROW OF EVERY COLUMN -->
+				<td><?php echo $rows['ID'];?></td>
+				<td><?php echo $rows['value'];?></td>
+				
+			</tr>
+			<?php
+				}
+			?>
+		</table>
+	</section>
+</body>
+
+</html>
+```
+*This code is responsible for display database data in table this is done by make a connection with database then use the select query to fetch data and the html is to make a table .
+
+### Result
+1. HTML page
+![Screenshot (1101)](https://user-images.githubusercontent.com/108452991/184704751-9fe2ab58-a166-4867-8b3c-bf15813e205e.png)
+
+2. PHP page
+ ![Screenshot (1102)](https://user-images.githubusercontent.com/108452991/184704928-b6a4f393-a847-4091-94c6-a673363d69ce.png)
+
+3. Database
+![Screenshot (1103)](https://user-images.githubusercontent.com/108452991/184705080-d189d16c-463e-4304-a2a5-b904c4e393f6.png)
+
+4. Database table page 
+![Screenshot (1104)](https://user-images.githubusercontent.com/108452991/184705246-8cd3dcdb-61de-4ec2-bfb7-5102bc1c21e3.png)
+
+
+
